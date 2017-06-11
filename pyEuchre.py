@@ -5,6 +5,10 @@ size = width, height = 720, 720
 green = 70, 150, 80
 white = 255, 255, 255
 red = 255, 0, 0
+h = "h"
+c = "c"
+s = "s"
+d = "d"
 
 screen = pygame.display.set_mode(size)
 
@@ -13,8 +17,12 @@ class Card(pygame.sprite.Sprite):
 
 	def __init__(self, suit, number):
 		pygame.sprite.Sprite.__init__(self)
+		cardValue = number
 		strSuit = str(suit)
-		strNumber = str(number)
+		if number == 9:
+			strNumber = "0" + str(number)
+		else:
+			strNumber = str(number)
 		cardPath = strSuit + strNumber + ".png"
 		self.image = pygame.image.load(cardPath)
 		self.rect = self.image.get_rect()
@@ -33,7 +41,33 @@ class cardSpace(pygame.sprite.Sprite):
 
 
 	#Card Objects
-for i in 
+cardH09 = Card(h, 9)
+cardH10 = Card(h, 10)
+cardH11 = Card(h, 11)
+cardH12 = Card(h, 12)
+cardH13 = Card(h, 13)
+cardH14 = Card(h, 14)
+cardS09 = Card(s, 9)
+cardS10 = Card(s, 10)
+cardS11 = Card(s, 11)
+cardS12 = Card(s, 12)
+cardS13 = Card(s, 13)
+cardS14 = Card(s, 14)
+cardD09 = Card(d, 9)
+cardD10 = Card(d, 10)
+cardD11 = Card(d, 11)
+cardD12 = Card(d, 12)
+cardD13 = Card(d, 13)
+cardD14 = Card(d, 14)
+cardC09 = Card(c, 9)
+cardC10 = Card(c, 10)
+cardC11 = Card(c, 11)
+cardC12 = Card(c, 12)
+cardC13 = Card(c, 13)
+cardC14 = Card(c, 14)
+
+		
+		
 
 	#Cards on Table
 cardSpaceUp = cardSpace(green, 100, 100)
